@@ -1,5 +1,16 @@
-import PptxGenJS from "https://cdn.jsdelivr.net/npm/pptxgenjs/dist/pptxgen.es.js";
+document.getElementById("generate").addEventListener("click", async () => {
+  const pres = new PptxGenJS();
+  pres.layout = "LAYOUT_16x9";
 
+  // tutto il tuo codice dentro qui
+
+  try {
+    await pres.writeFile({ fileName: "Cartera_ESG_Final.pptx" });
+    console.log("OK");
+  } catch (e) {
+    console.error(e);
+  }
+});
 const pres = new PptxGenJS();
 pres.layout = "LAYOUT_16x9";
 
