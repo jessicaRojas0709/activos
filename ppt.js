@@ -4,16 +4,6 @@ document.getElementById("generate").addEventListener("click", async () => {
 
   // tutto il tuo codice dentro qui
 
-  try {
-    await pres.writeFile({ fileName: "Cartera_ESG_Final.pptx" });
-    console.log("OK");
-  } catch (e) {
-    console.error(e);
-  }
-});
-const pres = new PptxGenJS();
-pres.layout = "LAYOUT_16x9";
-
 // ── Colores ──────────────────────────────────────────────────────────────────
 const D  = "0B3D6B";  // azul oscuro — headers
 const M  = "1A73A7";  // azul medio
@@ -453,9 +443,11 @@ const vc = v => String(v).startsWith("-") ? NE : (parseFloat(v) > 0 ? PO : TX);
 
 // ═══════════════════════════════════════════════════════════════════════════
 
-try {
-  await pres.writeFile({ fileName: "Cartera_ESG_Final.pptx" });
-  console.log("OK");
-} catch (e) {
-  console.error(e);
-}
+  try {
+    await pres.writeFile({ fileName: "Cartera_ESG_Final.pptx" });
+    console.log("OK");
+  } catch (e) {
+    console.error(e);
+  }
+});
+
