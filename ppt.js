@@ -442,8 +442,9 @@ const vc = v => String(v).startsWith("-") ? NE : (parseFloat(v) > 0 ? PO : TX);
 
 // ═══════════════════════════════════════════════════════════════════════════
 
-await pres.writeFile({
-  fileName:"Cartera_ESG_Final.pptx"
-});
-  .then(()=>console.log("OK"))
-  .catch(e=>{console.error(e.message);process.exit(1);});
+try {
+  await pres.writeFile({ fileName: "Cartera_ESG_Final.pptx" });
+  console.log("OK");
+} catch (e) {
+  console.error(e);
+}
