@@ -1,5 +1,6 @@
-const pptxgen = require("pptxgenjs");
-const pres = new pptxgen();
+import PptxGenJS from "https://cdn.jsdelivr.net/npm/pptxgenjs/dist/pptxgen.es.js";
+
+const pres = new PptxGenJS();
 pres.layout = "LAYOUT_16x9";
 
 // ── Colores ──────────────────────────────────────────────────────────────────
@@ -440,6 +441,9 @@ const vc = v => String(v).startsWith("-") ? NE : (parseFloat(v) > 0 ? PO : TX);
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
-pres.writeFile({fileName:"/home/claude/Cartera_ESG_Final.pptx"})
+
+await pres.writeFile({
+  fileName:"Cartera_ESG_Final.pptx"
+});
   .then(()=>console.log("OK"))
   .catch(e=>{console.error(e.message);process.exit(1);});
