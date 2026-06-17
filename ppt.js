@@ -1,7 +1,12 @@
 document.getElementById("generate").addEventListener("click", async () => {
-const pptxgen = require("pptxgenjs");
+const pres = new PptxGenJS();
 
-const pres = new pptxgen();
+pres.layout = "LAYOUT_16X9";
+pres.author = "Jessica Elizabeth Rojas Rodríguez";
+pres.company = "Universidad de Valladolid";
+pres.subject = "Trabajo Fin de Máster";
+pres.title = "Revolut y Transformación de la Banca Tradicional";
+pres.lang = "es-ES";
 pres.layout = "LAYOUT_16x9";
 pres.title = "Revolut y Transformación de la Banca Tradicional";
 
